@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #fff;
+  color: #111;
+  line-height: 1.8;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 100;
+  border-bottom: 1px solid #eee;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #555;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #000;
+  transition: width 0.3s;
+}
+
+.nav-list a:hover {
+  color: #000;
+}
+
+.nav-list a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  text-align: center;
+  padding: 6rem 2rem;
+  background-color: #f9f9f9;
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.section {
+  padding: 5rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  scroll-margin-top: 100px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.section:nth-child(odd) {
+  animation-delay: 0.2s;
+}
+.section:nth-child(even) {
+  animation-delay: 0.4s;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #000;
+  padding-left: 0.5rem;
+}
+
+.section p,
+.section li {
+  font-size: 1rem;
+  color: #333;
+}
+
+.work-item {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-left: 3px solid #000;
+  background: #fafafa;
+}
+
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contact-list li {
+  margin-bottom: 0.5rem;
+}
+
+.contact-list a {
+  text-decoration: none;
+  color: #000;
+  position: relative;
+}
+
+.contact-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: #000;
+  transition: width 0.3s;
+}
+
+.contact-list a:hover::after {
+  width: 100%;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f4f4f4;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* アニメーション */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  body {
+    padding: 0 1rem;
+  }
+}
